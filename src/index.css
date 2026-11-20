@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Archivo Variable', Archivo, system-ui, sans-serif;
+    font-feature-settings: 'tnum' 0;
+  }
+  ::selection {
+    background: #d7ebe9;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  :focus-visible {
+    outline-color: #0e6b66;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Recharts: keep focus outlines tidy */
+.recharts-wrapper:focus,
+.recharts-surface:focus {
+  outline: none;
+}
